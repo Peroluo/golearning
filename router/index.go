@@ -12,5 +12,6 @@ func APIRouters(Router *gin.RouterGroup) {
 		v1.GET("/", api.GetHome)
 		v1.GET("/getGoodsList", api.GetGoodsList)
 		v1.GET("/getMap", api.TestMap)
+		v1.GET("/getInter", api.GetInter)
 	}
 }
