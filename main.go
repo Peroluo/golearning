@@ -1,13 +1,16 @@
 package main
 
 import (
-	initrouter "golearning/init"
+	"golearning/inits"
 	"net/http"
 	"time"
 )
 
 func main() {
-	Router := initrouter.InitRouter()
+	inits.InitLog()
+	_ = inits.InitRedis() // 初始化redis服务
+	Router := inits.InitRouter()
+	inits.QMLog.Info("服务器开启") // 日志测试代码
 	s := &http.Server{
 		Addr:           ":8888",
 		Handler:        Router,
