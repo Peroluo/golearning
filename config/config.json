@@ -3,5 +3,12 @@
     "addr": "127.0.0.1:6379",
     "password": "",
     "DB": 0
+  },
+  "MysqlAdmin": {
+    "username": "root",
+    "password": "ectripaes2013",
+    "path": "202.96.155.121",
+    "dbname": "nideshop",
+    "config": "charset=utf8&parseTime=True&loc=Local"
   }
 }

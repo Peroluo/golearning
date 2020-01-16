@@ -2,6 +2,8 @@ package api
 
 import (
 	"github.com/gin-gonic/gin"
+	"fmt"
+	"golearning/model/sqlmodel"
 )
 
 // Student test
@@ -19,9 +21,15 @@ type Good struct {
 
 // GetHome 控制器
 func GetHome(c *gin.Context) {
-	goods := []Good{Good{Name: "商品名称", Price: 1}}
-	stu := Student{Name: "wd", Age: 22, Goods: goods}
+	todo := sqlmodel.TodoModel{
+		Title:     "SS",
+		Completed: 1,
+	}
+	err := todo.AddTodo()
+	fmt.Println(err)
+	// goods := []Good{Good{Name: "商品名称", Price: 1}}
+	// stu := Student{Name: "wd", Age: 22, Goods: goods}
 	c.JSON(200, gin.H{
-		"data": stu,
+		"data": todo,
 	})
 }

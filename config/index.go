@@ -9,6 +9,7 @@ import (
 // Config 系统相关配置
 type Config struct {
 	RedisAdmin RedisAdmin
+	MysqlAdmin MysqlAdmin
 }
 
 // RedisAdmin Redis连接
@@ -18,9 +19,19 @@ type RedisAdmin struct {
 	DB       int
 }
 
+// MysqlAdmin Mysql连接
+type MysqlAdmin struct {
+	Username string
+	Password string
+	Path     string
+	Dbname   string
+	Config   string
+}
+
 // GinVueAdminconfig GinVueAdminconfig
 var GinVueAdminconfig Config
 
+// 读取配置文件
 func init() {
 	v := viper.New()
 	v.SetConfigName("config")   //  设置配置文件名 (不带后缀)

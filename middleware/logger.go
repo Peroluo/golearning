@@ -3,10 +3,10 @@ package middleware
 import (
 	"bytes"
 	"github.com/gin-gonic/gin"
-	"golearning/init/qmlog"
 	"net/http/httputil"
 	"strings"
 	"time"
+	"golearning/inits/qmlog"
 )
 
 // Logger 中间件
