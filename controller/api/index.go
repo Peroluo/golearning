@@ -1,8 +1,8 @@
 package api
 
 import (
-	"github.com/gin-gonic/gin"
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"golearning/model/sqlmodel"
 )
 
@@ -21,7 +21,7 @@ type Good struct {
 
 // GetHome 控制器
 func GetHome(c *gin.Context) {
-	todo := sqlmodel.TodoModel{
+	todo := &sqlmodel.TodoModel{
 		Title:     "SS",
 		Completed: 1,
 	}
